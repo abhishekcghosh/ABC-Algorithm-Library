@@ -1,0 +1,4 @@
+; dlltool --base-file C:\DOCUME~1\VIRTUA~1\LOCALS~1\Temp/cca01480.base --output-exp abcalgo32.exp --dllname abcalgo32.dll --output-def libabcalgo32.def --no-export-all-symbols --add-stdcall-alias --exclude-symbol=DllMainCRTStartup@12 --def C:\DOCUME~1\VIRTUA~1\LOCALS~1\Temp/cca01480.def --output-lib libabcalgo32.a
+EXPORTS
+	runABC @ 1
+	initABC @ 2

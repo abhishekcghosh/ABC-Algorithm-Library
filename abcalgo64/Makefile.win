@@ -1,0 +1,37 @@
+# Project: abcalgo64
+# Makefile created by Dev-C++ 5.4.1
+
+CPP      = g++.exe -D__DEBUG__
+CC       = gcc.exe -D__DEBUG__
+WINDRES  = windres.exe
+RES      = abcalgo64_private.res
+OBJ      = abcalgo.o $(RES)
+LINKOBJ  = abcalgo.o $(RES)
+LIBS     = -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib" -static-libgcc --no-export-all-symbols --add-stdcall-alias  -g3
+INCS     = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include"
+CXXINCS  = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include"
+BIN      = abcalgo64.dll
+CXXFLAGS = $(CXXINCS) -DBUILDING_DLL=1 -g3
+CFLAGS   = $(INCS) -DBUILDING_DLL=1 -g3
+RM       = rm -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before $(BIN) all-after
+
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+DLLWRAP=dllwrap.exe
+DEFFILE=libabcalgo64.def
+STATICLIB=libabcalgo64.a
+
+$(BIN): $(LINKOBJ)
+	$(DLLWRAP) --output-def $(DEFFILE) --driver-name c++ --implib $(STATICLIB) $(LINKOBJ) $(LIBS) -o $(BIN)
+
+abcalgo.o: abcalgo.cpp
+	$(CPP) -c abcalgo.cpp -o abcalgo.o $(CXXFLAGS)
+
+abcalgo64_private.res: abcalgo64_private.rc 
+	$(WINDRES) -i abcalgo64_private.rc --input-format=rc -o abcalgo64_private.res -O coff 

@@ -1,0 +1,4 @@
+; dlltool --base-file C:\Users\Abhishek\AppData\Local\Temp\cca00328.base --output-exp abcalgo64.exp --dllname abcalgo64.dll --output-def libabcalgo64.def --no-export-all-symbols --add-stdcall-alias --exclude-symbol=DllMainCRTStartup --def C:\Users\Abhishek\AppData\Local\Temp\cca00328.def --output-lib libabcalgo64.a
+EXPORTS
+	runABC @ 1
+	initABC @ 2
