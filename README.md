@@ -1,7 +1,7 @@
-# Artificial Bee Colony Algorithm 
-## Dynamic Link Library (DLL) v1
+# Artificial Bee Colony Algorithm
+## Dynamic Link Library (DLL), v1
 
-[Artificial Bee Colony (ABC) algorithm](http://en.wikipedia.org/wiki/Artificial_bee_colony_algorithm) is an optimization algorithm based on the intelligent foraging behaviour of honey bee swarm, proposed by [Dervis Karaboga]() in 2005.
+[Artificial Bee Colony (ABC) algorithm](http://en.wikipedia.org/wiki/Artificial_bee_colony_algorithm) is an optimization algorithm based on the intelligent foraging behaviour of honey bee swarm, proposed by [Dervis Karaboga](http://mf.erciyes.edu.tr/abc/publ.htm) in 2005.
 
 ### A brief guide on implementing the library:
 
@@ -13,7 +13,7 @@ The library implementation consists of two primary functions:
 
 
 
-Acoording to the design of the ABC algorithm, **possible solutions are denoted as food sources** that the honeybees try to investigate and forage. The model of a food source is implemented using a **C** structure which looks like this:
+Acoording to the design of the ABC algorithm, **possible solutions are denoted as food sources** that the honeybees try to investigate and forage. The model of a food source is implemented using a C/C++ **structure** which looks like this:
 
 	struct foodSource {
     	double dim[MAX_DIM_COUNT];
@@ -60,7 +60,7 @@ The parameters have been described in detail:
 
 - **`maxMin`** (*integer*) 							– 	an argument that denotes whether the problem to be solved is a **maximization** problem 													(pass the value **0**) or **minimization** problem (pass the value **1**) 
 
-- **`dumpFileName`** (*string of maximum length **100***) – 	a string that holds the name of a **data-sheet text file** that will be outputed by the 	program containing the best solution generated per iteration in the algorithm, thus giving an **indication of the convergence** of the solution.
+- **`dumpFileName`** (*string of maximum length ***100***) – 	a string that holds the name of a **data-sheet text file** that will be outputed by the 	program containing the best solution generated per iteration in the algorithm, thus giving an **indication of the convergence** of the solution.
 
 The next step in the process is much simpler. 
 
